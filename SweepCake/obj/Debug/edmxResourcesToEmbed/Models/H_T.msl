@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="H_TshopModelStoreContainer" CdmEntityContainer="H_TshopEntities1">
+    <EntitySetMapping Name="Cake_Image">
+      <EntityTypeMapping TypeName="H_TshopModel.Cake_Image">
+        <MappingFragment StoreEntitySet="Cake_Image">
+          <ScalarProperty Name="Imange_ID" ColumnName="Imange_ID" />
+          <ScalarProperty Name="Cake_ID" ColumnName="Cake_ID" />
+          <ScalarProperty Name="Cake_Image1" ColumnName="Cake_Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cake_Type">
+      <EntityTypeMapping TypeName="H_TshopModel.Cake_Type">
+        <MappingFragment StoreEntitySet="Cake_Type">
+          <ScalarProperty Name="Cake_Type_Code" ColumnName="Cake_Type_Code" />
+          <ScalarProperty Name="Cake_Type_Name" ColumnName="Cake_Type_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cakes">
+      <EntityTypeMapping TypeName="H_TshopModel.Cake">
+        <MappingFragment StoreEntitySet="Cakes">
+          <ScalarProperty Name="Cake_ID" ColumnName="Cake_ID" />
+          <ScalarProperty Name="Cake_Name" ColumnName="Cake_Name" />
+          <ScalarProperty Name="Cake_Type_Code" ColumnName="Cake_Type_Code" />
+          <ScalarProperty Name="Cake_Price" ColumnName="Cake_Price" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Cake_decripsion" ColumnName="Cake_decripsion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Carts">
+      <EntityTypeMapping TypeName="H_TshopModel.Cart">
+        <MappingFragment StoreEntitySet="Cart">
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Cart_ID" ColumnName="Cart_ID" />
+          <ScalarProperty Name="Customer_Payment_ID" ColumnName="Customer_Payment_ID" />
+          <ScalarProperty Name="Payment_time" ColumnName="Payment_time" />
+          <ScalarProperty Name="Shipping_Address" ColumnName="Shipping_Address" />
+          <ScalarProperty Name="Customer_Requirements" ColumnName="Customer_Requirements" />
+          <ScalarProperty Name="Cart_Status" ColumnName="Cart_Status" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Driver_ID" ColumnName="Driver_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cart_Item">
+      <EntityTypeMapping TypeName="H_TshopModel.Cart_Item">
+        <MappingFragment StoreEntitySet="Cart_Item">
+          <ScalarProperty Name="Cake_ID" ColumnName="Cake_ID" />
+          <ScalarProperty Name="Cart_ID" ColumnName="Cart_ID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Orther" ColumnName="Orther" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chefs">
+      <EntityTypeMapping TypeName="H_TshopModel.Chef">
+        <MappingFragment StoreEntitySet="Chef">
+          <ScalarProperty Name="Chef_ID" ColumnName="Chef_ID" />
+          <ScalarProperty Name="Chef_Name" ColumnName="Chef_Name" />
+          <ScalarProperty Name="Chef_Phone" ColumnName="Chef_Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMMENTs">
+      <EntityTypeMapping TypeName="H_TshopModel.COMMENT">
+        <MappingFragment StoreEntitySet="COMMENT">
+          <ScalarProperty Name="Comment_ID" ColumnName="Comment_ID" />
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Cake_ID" ColumnName="Cake_ID" />
+          <ScalarProperty Name="Time_comment" ColumnName="Time_comment" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="H_TshopModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+          <ScalarProperty Name="Customer_Phone" ColumnName="Customer_Phone" />
+          <ScalarProperty Name="Customer_Email" ColumnName="Customer_Email" />
+          <ScalarProperty Name="Customer_Adress" ColumnName="Customer_Adress" />
+          <ScalarProperty Name="Customer_Payment_ID" ColumnName="Customer_Payment_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer_Payment_Methods">
+      <EntityTypeMapping TypeName="H_TshopModel.Customer_Payment_Methods">
+        <MappingFragment StoreEntitySet="Customer_Payment_Methods">
+          <ScalarProperty Name="Customer_Payment_ID" ColumnName="Customer_Payment_ID" />
+          <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+          <ScalarProperty Name="Payment_Menthod_Code" ColumnName="Payment_Menthod_Code" />
+          <ScalarProperty Name="Card_Number" ColumnName="Card_Number" />
+          <ScalarProperty Name="Date_from" ColumnName="Date_from" />
+          <ScalarProperty Name="Date_to" ColumnName="Date_to" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drivers">
+      <EntityTypeMapping TypeName="H_TshopModel.Driver">
+        <MappingFragment StoreEntitySet="Driver">
+          <ScalarProperty Name="Driver_ID" ColumnName="Driver_ID" />
+          <ScalarProperty Name="Driver_Name" ColumnName="Driver_Name" />
+          <ScalarProperty Name="Driver_Phone" ColumnName="Driver_Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoginSystems">
+      <EntityTypeMapping TypeName="H_TshopModel.LoginSystem">
+        <MappingFragment StoreEntitySet="LoginSystem">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+          <ScalarProperty Name="ID_Rule" ColumnName="ID_Rule" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Managers">
+      <EntityTypeMapping TypeName="H_TshopModel.Manager">
+        <MappingFragment StoreEntitySet="Manager">
+          <ScalarProperty Name="Manager_ID" ColumnName="Manager_ID" />
+          <ScalarProperty Name="Manager_Name" ColumnName="Manager_Name" />
+          <ScalarProperty Name="Manager_Phone" ColumnName="Manager_Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payment_Methods">
+      <EntityTypeMapping TypeName="H_TshopModel.Payment_Methods">
+        <MappingFragment StoreEntitySet="Payment_Methods">
+          <ScalarProperty Name="Payment_Method_Code" ColumnName="Payment_Method_Code" />
+          <ScalarProperty Name="Payment_Method_Descripsion" ColumnName="Payment_Method_Descripsion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

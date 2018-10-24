@@ -1,0 +1,1074 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+<head>
+    <link href="~/Content/style2.css" rel="stylesheet" />
+</head>
+
+    <div class="clearfix"><br></div>
+    <div class="container">
+        <div class="content row">
+            <div class="col-md-9 col-md-push-3 center-site">
+
+                <div class="center">
+                    <div class="toolbar">
+                        <div class="soft">
+                            <br />
+                            <label class="">Sắp xếp theo</label>
+                            <select class="sort-by">
+                                <option value="default">Mặc định</option>
+                                <option value="price-asc">Giá tăng dần</option>
+                                <option value="price-desc">Giá giảm dần</option>
+                                <option value="alpha-asc">Từ A-Z</option>
+                                <option value="alpha-desc">Từ Z-A</option>
+                                <option value="created-desc">Mới đến cũ</option>
+                                <option value="created-asc">Cũ đến mới</option>
+                            </select>
+                        </div>
+                        <div class="soft">
+                            <br />
+                            <label>Hiển thị</label>
+                            <select onchange="location = this.options[this.selectedIndex].value;" class="sort">
+                                <option value="default">15</option>
+                                <option value="/collections/cake-banh-kem-sinh-nhat?view=18">18</option>
+                                <option value="/collections/cake-banh-kem-sinh-nhat?view=21">21</option>
+                            </select>
+                        </div>
+
+                        <div class="button-group view display" data-toggle="buttons-radio"><a class="active" id="grid" hrel="tooltip" title="Dạng Lưới" onclick="display('grid');loadisotope();"><i class="fa fa-th-large"></i></a> <a id="list" hrel="tooltip" title="Dạng Danh sách" onclick="display('list');"><i class="fa fa-th-list"></i></a></div>
+                        <script>
+                            $(document).ready(function () {
+                                Bizweb.queryParams = {};
+                                if (location.search.length) {
+                                    for (var aKeyValue, i = 0, aCouples = location.search.substr(1).split('&'); i < aCouples.length; i++) {
+                                        aKeyValue = aCouples[i].split('=');
+                                        if (aKeyValue.length > 1) {
+                                            Bizweb.queryParams[decodeURIComponent(aKeyValue[0])] = decodeURIComponent(aKeyValue[1]);
+                                        }
+                                    }
+                                }
+                                $('.sort-by')
+                                    .val('default')
+                                    .bind('change', function () {
+                                        Bizweb.queryParams.sortby = jQuery(this).val();
+                                        location.search = jQuery.param(Bizweb.queryParams).replace(/\+/g, '%20');
+                                    });
+                            });
+                        </script>
+                    </div>
+                    <div class="collect-grid">
+                        <div class="row">
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+
+
+                                <div class="product-grid">
+                                    <div class="feature-img">
+                                        <a href="/tiramisu-tron">
+                                            <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/tiramisu-mousse-cake-banh-kem-y-quan-1.png?v=1520774638463" alt="Tiramisu (ổ tròn)" class="img-responsive">
+                                        </a>
+
+                                    </div>
+                                    <div class="prod-info">
+
+                                        <div class="price-box">
+                                            <p class="special-price">
+                                                <span>From 330.000₫</span>
+                                            </p>
+                                        </div>
+
+                                        <a href="/tiramisu-tron">
+                                            <h3>Tiramisu (ổ tròn)</h3>
+                                        </a>
+                                    </div>
+                                    <div class="grid-action-box">
+
+
+                                        <a href="/tiramisu-tron" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+
+
+
+
+
+
+
+
+                                <div class="product-grid">
+                                    <div class="feature-img">
+                                        <a href="/passion-mousse">
+                                            <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/banh-kem-dolce-vita-mousse-chanh-day.png?v=1520773895827" alt="Passion Fruit Mousse  - Bánh Mousse Chanh dây" class="img-responsive">
+                                        </a>
+
+                                    </div>
+                                    <div class="prod-info">
+
+                                        <div class="price-box">
+                                            <p class="special-price">
+                                                <span>From 295.000₫</span>
+                                            </p>
+                                        </div>
+
+                                        <a href="/passion-mousse">
+                                            <h3>Passion Fruit Mousse  - Bánh Mousse Chanh dây</h3>
+                                        </a>
+                                    </div>
+                                    <div class="grid-action-box">
+
+
+                                        <a href="/passion-mousse" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+
+
+
+
+
+
+
+
+                                <div class="product-grid">
+                                    <div class="feature-img">
+                                        <a href="/green-tea-lemon-mousse">
+                                            <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/green-tea-lemon-mousse-banh-kem-pho-mai-tra-xanh-chanh-tiem-banh-dolce-vita-quan-1-3.png?v=1502190818667" alt="Green Tea Lemon Mousse - Bánh Mousse Trà xanh Chanh" class="img-responsive">
+                                        </a>
+
+                                    </div>
+                                    <div class="prod-info">
+
+                                        <div class="price-box">
+                                            <p class="special-price">
+                                                <span>From 295.000₫</span>
+                                            </p>
+                                        </div>
+
+                                        <a href="/green-tea-lemon-mousse">
+                                            <h3>Green Tea Lemon Mousse - Bánh Mousse Trà xanh Chanh</h3>
+                                        </a>
+                                    </div>
+                                    <div class="grid-action-box">
+
+
+                                        <a href="/green-tea-lemon-mousse" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+
+
+
+
+
+
+
+
+                                <div class="product-grid">
+                                    <div class="feature-img">
+                                        <a href="/chocolate-mousse">
+                                            <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/chocolat-mousse-socola-dolce-vita-tiem-banh-kem-quan-1.png?v=1502444644483" alt="Chocolate Mousse - Bánh mousse socola" class="img-responsive">
+                                        </a>
+
+                                    </div>
+                                    <div class="prod-info">
+
+                                        <div class="price-box">
+                                            <p class="special-price">
+                                                <span>From 295.000₫</span>
+                                            </p>
+                                        </div>
+
+                                        <a href="/chocolate-mousse">
+                                            <h3>Chocolate Mousse - Bánh mousse socola</h3>
+                                        </a>
+                                    </div>
+                                    <div class="grid-action-box">
+
+
+                                        <a href="/chocolate-mousse" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+
+
+
+
+
+
+
+
+                                <div class="product-grid">
+                                    <div class="feature-img">
+                                        <a href="/matcha-yogurt-mousse">
+                                            <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/banh-kem-dolce-vita-mousse-matcha.png?v=1520774196667" alt="Matcha Yogurt Mousse - Bánh mousse Trà xanh Sữa chua" class="img-responsive">
+                                        </a>
+
+                                    </div>
+                                    <div class="prod-info">
+
+                                        <div class="price-box">
+                                            <p class="special-price">
+                                                <span>From 295.000₫</span>
+                                            </p>
+                                        </div>
+
+                                        <a href="/matcha-yogurt-mousse">
+                                            <h3>Matcha Yogurt Mousse - Bánh mousse Trà xanh Sữa chua</h3>
+                                        </a>
+                                    </div>
+                                    <div class="grid-action-box">
+
+
+                                        <a href="/matcha-yogurt-mousse" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+
+
+
+
+
+
+
+
+                                <div class="product-grid">
+                                    <div class="feature-img">
+                                        <a href="/tiramisu-o-hinh-trai-tim">
+                                            <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/banh-kem-dolce-vita-tiramisu.png?v=1520774342613" alt="Tiramisu (ổ hình trái tim)" class="img-responsive">
+                                        </a>
+
+                                    </div>
+                                    <div class="prod-info">
+
+                                        <div class="price-box">
+                                            <p class="special-price">
+                                                <span>From 330.000₫</span>
+                                            </p>
+                                        </div>
+
+                                        <a href="/tiramisu-o-hinh-trai-tim">
+                                            <h3>Tiramisu (ổ hình trái tim)</h3>
+                                        </a>
+                                    </div>
+                                    <div class="grid-action-box">
+
+
+                                        <a href="/tiramisu-o-hinh-trai-tim" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+
+
+
+
+
+
+
+
+                                <div class="product-grid">
+                                    <div class="feature-img">
+                                        <a href="/ganache-brownie-o-tron">
+                                            <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/brownie-cake-dolce-vita-banh-socola-tiem-banh-quan-1-2.png?v=1502324291703" alt="Ganache Brownie - Bánh Brownie" class="img-responsive">
+                                        </a>
+
+                                    </div>
+                                    <div class="prod-info">
+
+                                        <div class="price-box">
+                                            <p class="special-price">
+                                                <span>From 295.000₫</span>
+                                            </p>
+                                        </div>
+
+                                        <a href="/ganache-brownie-o-tron">
+                                            <h3>Ganache Brownie - Bánh Brownie</h3>
+                                        </a>
+                                    </div>
+                                    <div class="grid-action-box">
+
+
+                                        <a href="/ganache-brownie-o-tron" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+
+
+
+
+
+
+
+
+                                <div class="product-grid">
+                                    <div class="feature-img">
+                                        <a href="/berry-cake">
+                                            <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/black-forest-cake-dolce-vita-banh-kem-cacao-quan-1-3.png?v=1520774706897" alt="Berry Cake" class="img-responsive">
+                                        </a>
+
+                                    </div>
+                                    <div class="prod-info">
+
+                                        <div class="price-box">
+                                            <p class="special-price">
+                                                <span>From 220.000₫</span>
+                                            </p>
+                                        </div>
+
+                                        <a href="/berry-cake">
+                                            <h3>Berry Cake</h3>
+                                        </a>
+                                    </div>
+                                    <div class="grid-action-box">
+
+
+                                        <a href="/berry-cake" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+
+
+
+
+
+
+
+
+                                <div class="product-grid">
+                                    <div class="feature-img">
+                                        <a href="/love-tiramisu">
+                                            <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/tiramisu-tiem-banh-dolcevita-2.png?v=1537326045460" alt="Love Tiramisu" class="img-responsive">
+                                        </a>
+
+                                    </div>
+                                    <div class="prod-info">
+
+                                        <div class="price-box">
+                                            <p class="special-price">
+                                                <span>From 430.000₫</span>
+                                            </p>
+                                        </div>
+
+                                        <a href="/love-tiramisu">
+                                            <h3>Love Tiramisu</h3>
+                                        </a>
+                                    </div>
+                                    <div class="grid-action-box">
+
+
+                                        <a href="/love-tiramisu" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+
+
+
+
+
+
+
+
+                                <div class="product-grid">
+                                    <div class="feature-img">
+                                        <a href="/corn-milk-cake">
+                                            <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/corn-milk-cake-dolce-vita-banh-kem-bap-quan-1-2.png?v=1502117109397" alt="Corn Milk Cake - Bánh kem bắp" class="img-responsive">
+                                        </a>
+
+                                    </div>
+                                    <div class="prod-info">
+
+                                        <div class="price-box">
+                                            <p class="special-price">
+                                                <span>From 220.000₫</span>
+                                            </p>
+                                        </div>
+
+                                        <a href="/corn-milk-cake">
+                                            <h3>Corn Milk Cake - Bánh kem bắp</h3>
+                                        </a>
+                                    </div>
+                                    <div class="grid-action-box">
+
+
+                                        <a href="/corn-milk-cake" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+
+
+
+
+
+
+
+
+                                <div class="product-grid">
+                                    <div class="feature-img">
+                                        <a href="/mixed-fruit-cake-1">
+                                            <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/mixed-fruit-cake-dolce-vita-banh-kem-mut-trai-cay-quan-1.png?v=1502116026217" alt="Mixed Fruit Cake" class="img-responsive">
+                                        </a>
+
+                                    </div>
+                                    <div class="prod-info">
+
+                                        <div class="price-box">
+                                            <p class="special-price">
+                                                <span>From 240.000₫</span>
+                                            </p>
+                                        </div>
+
+                                        <a href="/mixed-fruit-cake-1">
+                                            <h3>Mixed Fruit Cake</h3>
+                                        </a>
+                                    </div>
+                                    <div class="grid-action-box">
+
+
+                                        <a href="/mixed-fruit-cake-1" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+
+
+
+
+
+
+
+
+                                <div class="product-grid">
+                                    <div class="feature-img">
+                                        <a href="/banh-cuoi-tran-semi-naked-naked-wedding-cakes">
+                                            <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/wedding-cake-banh-tang-banh-cuoi-hoa-tuoi-tiem-banh-dolce-vita-quan-1.png?v=1502551926890" alt="Bánh cưới - wedding cake" class="img-responsive">
+                                        </a>
+
+                                    </div>
+                                    <div class="prod-info">
+
+                                        <div class="price-box">
+                                            <p class="special-price">
+                                                <span>From 1.770.000₫</span>
+                                            </p>
+                                        </div>
+
+                                        <a href="/banh-cuoi-tran-semi-naked-naked-wedding-cakes">
+                                            <h3>Bánh cưới - wedding cake</h3>
+                                        </a>
+                                    </div>
+                                    <div class="grid-action-box">
+
+
+                                        <form action="/cart/add" class="product_item_form" method="post">
+                                            <input type="hidden" name="variantId" value="10091211">
+                                            <button type="submit" title="Đặt mua" class="list-add-cart add-to-cart">
+                                                <span>Đặt mua</span>
+                                            </button>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="collect-list" style="display: none;">
+
+
+
+
+
+
+
+
+
+
+                        <div class="product-grid clearfix">
+                            <div class="feature-img">
+                                <a href="/tiramisu-tron">
+                                    <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/tiramisu-mousse-cake-banh-kem-y-quan-1.png?v=1520774638463" alt="Tiramisu (ổ tròn)" class="img-responsive">
+                                </a>
+                            </div>
+                            <div class="prod-info">
+                                <a href="/tiramisu-tron">
+                                    <h3>Tiramisu (ổ tròn)</h3>
+                                </a>
+                                <div class="desc">
+                                    <p> ♥ TIRAMISU là một loại bánh ngọt tráng miệng vị cà phê rất nổi tiếng của nước Ý. Bánh gồm các lớp bánh Lady Fingers (Savoiardi, [savoˈjardi] (là một loại bánh quy, giống như bánh champaign của Việt Nam nhưng ngon hơn) nhúng cà phê và rượu xen kẽ...</p>
+                                </div>
+
+                                <div class="price-box">
+                                    <p class="special-price">
+                                        <span>Giá từ:330.000₫</span>
+                                    </p>
+                                </div>
+
+                                <div class="action-box">
+
+
+
+                                    <a href="/tiramisu-tron" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="product-grid clearfix">
+                            <div class="feature-img">
+                                <a href="/passion-mousse">
+                                    <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/banh-kem-dolce-vita-mousse-chanh-day.png?v=1520773895827" alt="Passion Fruit Mousse  - Bánh Mousse Chanh dây" class="img-responsive">
+                                </a>
+                            </div>
+                            <div class="prod-info">
+                                <a href="/passion-mousse">
+                                    <h3>Passion Fruit Mousse  - Bánh Mousse Chanh dây</h3>
+                                </a>
+                                <div class="desc">
+                                    <p> ARE YOU PASSIONATE?... Có lẽ không cần nói nhiều về chiếc bánh Passion Cheesecake - Chiếc bánh mousse chanh dây đã quá thông dụng và phổ biến.. Ở Dolce Vita cũng vậy, đây là một trong những chiếc bánh được đặt nhiều nhất, mặc dù đó không phải là...</p>
+                                </div>
+
+                                <div class="price-box">
+                                    <p class="special-price">
+                                        <span>Giá từ:295.000₫</span>
+                                    </p>
+                                </div>
+
+                                <div class="action-box">
+
+
+
+                                    <a href="/passion-mousse" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="product-grid clearfix">
+                            <div class="feature-img">
+                                <a href="/green-tea-lemon-mousse">
+                                    <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/green-tea-lemon-mousse-banh-kem-pho-mai-tra-xanh-chanh-tiem-banh-dolce-vita-quan-1-3.png?v=1502190818667" alt="Green Tea Lemon Mousse - Bánh Mousse Trà xanh Chanh" class="img-responsive">
+                                </a>
+                            </div>
+                            <div class="prod-info">
+                                <a href="/green-tea-lemon-mousse">
+                                    <h3>Green Tea Lemon Mousse - Bánh Mousse Trà xanh Chanh</h3>
+                                </a>
+                                <div class="desc">
+                                    <p>
+                                        Đã có một Tiramisu nồng nàn say đắm, sao vẫn cứ mơ một thanh khiết, tinh khôi?
+                                        TRÀ XANH CHANH - BÁNH ĐẾN TỪ GIẤC MƠ
+                                        Một màu xanh thanh khiết bất tận… Một trắng trong tinh khôi nhẹ nhàng…  Một đồi trà trải dài ngút...
+                                    </p>
+                                </div>
+
+                                <div class="price-box">
+                                    <p class="special-price">
+                                        <span>Giá từ:295.000₫</span>
+                                    </p>
+                                </div>
+
+                                <div class="action-box">
+
+
+
+                                    <a href="/green-tea-lemon-mousse" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="product-grid clearfix">
+                            <div class="feature-img">
+                                <a href="/chocolate-mousse">
+                                    <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/chocolat-mousse-socola-dolce-vita-tiem-banh-kem-quan-1.png?v=1502444644483" alt="Chocolate Mousse - Bánh mousse socola" class="img-responsive">
+                                </a>
+                            </div>
+                            <div class="prod-info">
+                                <a href="/chocolate-mousse">
+                                    <h3>Chocolate Mousse - Bánh mousse socola</h3>
+                                </a>
+                                <div class="desc">
+                                    <p>
+                                        Mousse socola là một loại bánh cực kỳ lý tưởng cho những ai yêu thích hương vị tình yêu socola.
+                                        ♥  Bánh làm từ bông lan cacao; lớp kem mousse gồm phô mai (cream cheese), kem tươi whipping (whipping cream) và socola.
+                                        ♥ Bánh ăn...
+                                    </p>
+                                </div>
+
+                                <div class="price-box">
+                                    <p class="special-price">
+                                        <span>Giá từ:295.000₫</span>
+                                    </p>
+                                </div>
+
+                                <div class="action-box">
+
+
+
+                                    <a href="/chocolate-mousse" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="product-grid clearfix">
+                            <div class="feature-img">
+                                <a href="/matcha-yogurt-mousse">
+                                    <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/banh-kem-dolce-vita-mousse-matcha.png?v=1520774196667" alt="Matcha Yogurt Mousse - Bánh mousse Trà xanh Sữa chua" class="img-responsive">
+                                </a>
+                            </div>
+                            <div class="prod-info">
+                                <a href="/matcha-yogurt-mousse">
+                                    <h3>Matcha Yogurt Mousse - Bánh mousse Trà xanh Sữa chua</h3>
+                                </a>
+                                <div class="desc">
+                                    <p>
+                                        Matcha Yogurt Mousse - Phomai Matcha Sữa chua đích thị là món bánh của trà xanh.
+                                        ♥  Bánh làm từ bông lan trà xanh; lớp kem mousse gồm phô mai, sữa chua, bột trà xanh, kem tươi whipping. Màu của bánh là màu tự nhiên của...
+                                    </p>
+                                </div>
+
+                                <div class="price-box">
+                                    <p class="special-price">
+                                        <span>Giá từ:295.000₫</span>
+                                    </p>
+                                </div>
+
+                                <div class="action-box">
+
+
+
+                                    <a href="/matcha-yogurt-mousse" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="product-grid clearfix">
+                            <div class="feature-img">
+                                <a href="/tiramisu-o-hinh-trai-tim">
+                                    <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/banh-kem-dolce-vita-tiramisu.png?v=1520774342613" alt="Tiramisu (ổ hình trái tim)" class="img-responsive">
+                                </a>
+                            </div>
+                            <div class="prod-info">
+                                <a href="/tiramisu-o-hinh-trai-tim">
+                                    <h3>Tiramisu (ổ hình trái tim)</h3>
+                                </a>
+                                <div class="desc">
+                                    <p> ♥ TIRAMISU là một loại bánh ngọt tráng miệng vị cà phê rất nổi tiếng của nước Ý, gồm các lớp bánh Lady Fingers (Savoiardi, [savoˈjardi] (là một loại bánh quy, giống như bánh champaign của Việt Nam nhưng ngon hơn) nhúng cà phê xen kẽ với hỗn hợp...</p>
+                                </div>
+
+                                <div class="price-box">
+                                    <p class="special-price">
+                                        <span>Giá từ:330.000₫</span>
+                                    </p>
+                                </div>
+
+                                <div class="action-box">
+
+
+
+                                    <a href="/tiramisu-o-hinh-trai-tim" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="product-grid clearfix">
+                            <div class="feature-img">
+                                <a href="/ganache-brownie-o-tron">
+                                    <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/brownie-cake-dolce-vita-banh-socola-tiem-banh-quan-1-2.png?v=1502324291703" alt="Ganache Brownie - Bánh Brownie" class="img-responsive">
+                                </a>
+                            </div>
+                            <div class="prod-info">
+                                <a href="/ganache-brownie-o-tron">
+                                    <h3>Ganache Brownie - Bánh Brownie</h3>
+                                </a>
+                                <div class="desc">
+                                    <p> ♥ Brownie là loại bánh đặc thù của chocolate. Nó là sự kết hợp hoàn hảo của bơ, bột cacao và chocolate đen. Thật trọn vẹn nếu thưởng thức chiếc bánh này cùng với ly cafe..Đây là sự lựa chọn mới cho những ai thích bánh sinh nhật nhưng...</p>
+                                </div>
+
+                                <div class="price-box">
+                                    <p class="special-price">
+                                        <span>Giá từ:295.000₫</span>
+                                    </p>
+                                </div>
+
+                                <div class="action-box">
+
+
+
+                                    <a href="/ganache-brownie-o-tron" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="product-grid clearfix">
+                            <div class="feature-img">
+                                <a href="/berry-cake">
+                                    <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/black-forest-cake-dolce-vita-banh-kem-cacao-quan-1-3.png?v=1520774706897" alt="Berry Cake" class="img-responsive">
+                                </a>
+                            </div>
+                            <div class="prod-info">
+                                <a href="/berry-cake">
+                                    <h3>Berry Cake</h3>
+                                </a>
+                                <div class="desc">
+                                    <p> ♥ Berry cake là chiếc bánh được chúng tôi làm với cảm hứng từ chiếc bánh black forest. Đúng như tên gọi, Black Forest cake đến từ khu rừng đen của nước Đức. Nồng nàn, quyến rũ và đầy mê hoặc, tất cả nguyên liệu đã hòa quyện một...</p>
+                                </div>
+
+                                <div class="price-box">
+                                    <p class="special-price">
+                                        <span>Giá từ:220.000₫</span>
+                                    </p>
+                                </div>
+
+                                <div class="action-box">
+
+
+
+                                    <a href="/berry-cake" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="product-grid clearfix">
+                            <div class="feature-img">
+                                <a href="/love-tiramisu">
+                                    <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/tiramisu-tiem-banh-dolcevita-2.png?v=1537326045460" alt="Love Tiramisu" class="img-responsive">
+                                </a>
+                            </div>
+                            <div class="prod-info">
+                                <a href="/love-tiramisu">
+                                    <h3>Love Tiramisu</h3>
+                                </a>
+                                <div class="desc">
+                                    <p>
+                                        ♥ Chiếc bánh Love Tiramisu là một món quà đặc biệt cho tình yêu.  Bánh tiramisu truyền thống , kết hợp với trang trí hoa hồng tươi trên mặt bánh và socola trắng xung quanh bánh.
+                                        ♥ TIRAMISU là một loại bánh ngọt tráng miệng vị cà...
+                                    </p>
+                                </div>
+
+                                <div class="price-box">
+                                    <p class="special-price">
+                                        <span>Giá từ:430.000₫</span>
+                                    </p>
+                                </div>
+
+                                <div class="action-box">
+
+
+
+                                    <a href="/love-tiramisu" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="product-grid clearfix">
+                            <div class="feature-img">
+                                <a href="/corn-milk-cake">
+                                    <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/corn-milk-cake-dolce-vita-banh-kem-bap-quan-1-2.png?v=1502117109397" alt="Corn Milk Cake - Bánh kem bắp" class="img-responsive">
+                                </a>
+                            </div>
+                            <div class="prod-info">
+                                <a href="/corn-milk-cake">
+                                    <h3>Corn Milk Cake - Bánh kem bắp</h3>
+                                </a>
+                                <div class="desc">
+                                    <p>
+                                        Trong các loại bánh kem sữa tươi thì bắp có vẻ là bánh được nhiều người chọn nhiều hơn. Có lẽ là do vị bánh ngọt thanh và vị thơm dễ chịu.
+                                        ♥  Bánh bắp kem sữa tươi (corn milk): bông lan vani, nhân bắp hạt.. Bánh...
+                                    </p>
+                                </div>
+
+                                <div class="price-box">
+                                    <p class="special-price">
+                                        <span>Giá từ:220.000₫</span>
+                                    </p>
+                                </div>
+
+                                <div class="action-box">
+
+
+
+                                    <a href="/corn-milk-cake" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="product-grid clearfix">
+                            <div class="feature-img">
+                                <a href="/mixed-fruit-cake-1">
+                                    <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/mixed-fruit-cake-dolce-vita-banh-kem-mut-trai-cay-quan-1.png?v=1502116026217" alt="Mixed Fruit Cake" class="img-responsive">
+                                </a>
+                            </div>
+                            <div class="prod-info">
+                                <a href="/mixed-fruit-cake-1">
+                                    <h3>Mixed Fruit Cake</h3>
+                                </a>
+                                <div class="desc">
+                                    <p>
+                                        ***** Bánh mixed fruit mùa này chỉ có 3 loại mứt là: Dâu tây, vỏ bưởi và thơm (Vì dâu tằm đã hết mùa).
+                                        So với dòng bánh kem phomai hay tiramisu thì bánh kem sữa tươi là loại bánh thông dụng, phù hợp đối với hầu hết...
+                                    </p>
+                                </div>
+
+                                <div class="price-box">
+                                    <p class="special-price">
+                                        <span>Giá từ:240.000₫</span>
+                                    </p>
+                                </div>
+
+                                <div class="action-box">
+
+
+
+                                    <a href="/mixed-fruit-cake-1" class="list-btn-add"><span>Chi tiết</span></a>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="product-grid clearfix">
+                            <div class="feature-img">
+                                <a href="/banh-cuoi-tran-semi-naked-naked-wedding-cakes">
+                                    <img src="//bizweb.dktcdn.net/thumb/medium/100/163/301/products/wedding-cake-banh-tang-banh-cuoi-hoa-tuoi-tiem-banh-dolce-vita-quan-1.png?v=1502551926890" alt="Bánh cưới - wedding cake" class="img-responsive">
+                                </a>
+                            </div>
+                            <div class="prod-info">
+                                <a href="/banh-cuoi-tran-semi-naked-naked-wedding-cakes">
+                                    <h3>Bánh cưới - wedding cake</h3>
+                                </a>
+                                <div class="desc">
+                                    <p>
+                                        Những chiếc bánh cưới màu trắng thuần khiết càng thêm tươi mát với hoa tươi hay những phụ kiện trang trí handmade..
+                                        Giá tham khảo cho bánh 2 tầng, đường kính 25cm và 16cm; chiều cao mỗi tầng 16cm, chưa bao gồm hoa trang trí: 1.770.000đ (bánh gato...
+                                    </p>
+                                </div>
+
+                                <div class="price-box">
+                                    <p class="special-price">
+                                        <span>Giá từ:1.770.000₫</span>
+                                    </p>
+                                </div>
+
+                                <div class="action-box">
+
+
+
+                                    <form action="/cart/add" method="post">
+                                        <input type="hidden" name="variantId" value="10091211">
+                                        <button type="submit" title="Đặt mua" class="list-add-cart add-to-cart">
+                                            <span>Đặt mua</span>
+                                        </button>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="pages">
+                        <ul class="list-unstyled">
+
+
+
+
+                            <li class="current">1</li>
+
+
+
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3 col-md-pull-9 left-sidebar">
+                <div class="category">
+                    <br />
+                    <div class="module-title">
+                        <h2 id="product">Danh mục bánh</h2>
+                    </div>
+                    <ul class="list-unstyled">
+
+
+                        <li><a class="link_active" href="/cake-banh-kem-sinh-nhat"><span>Cake - Bánh kem sinh nhật</span></a></li>
+
+
+
+                        <li><a class="" href="/bread-pastry-banh-mi-banh-ngot"><span>Tea break - Bánh ngọt</span></a></li>
+
+
+
+                        <li><a class="" href="/wedding-gift-cuoi-qua-tang"><span>Wedding &amp; Gift - Cưới &amp; Quà tặng</span></a></li>
+
+
+
+                        <li><a class="" href="/giang-sinh-nam-moi"><span>Xmas &amp; New year - Giáng sinh &amp; Năm mới</span></a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript">
+    function display(view) {
+        if (view == 'grid') {
+            $('.collect-grid').show();
+            $('.collect-list').hide();
+            $('.display').html('<a class="active" id="grid" rel="tooltip" title="Dạng Lưới" onclick="display(\'grid\');loadisotope();"><i class="fa fa-th-large"></i></a> <a id="list" rel="tooltip" title="Dạng Danh sách" onclick="display(\'list\');"><i class="fa fa-th-list"></i></a>');
+            localStorage.setItem('display', 'grid');
+        } else {
+            $('.collect-grid').hide();
+            $('.collect-list').show();
+            $('.display').html('<a id="grid" rel="tooltip" title="Dạng Lưới" onclick="display(\'grid\');loadisotope();"><i class="fa fa-th-large"></i></a> <a class="active" id="list" rel="tooltip" title="Dạng Danh sách" onclick="display(\'list\');"><i class="fa fa-th-list"></i></a>');
+            localStorage.setItem('display', 'list');
+        }
+    }
+    if (localStorage.getItem('display') == 'list') {
+        display('list');
+    } else {
+        display('grid');
+    }
+</script>

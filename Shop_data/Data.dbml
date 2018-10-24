@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="H_Tshop" Class="DataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\v11.0;Initial Catalog=H_Tshop;Integrated Security=True" SettingsObjectName="Shop_data.Properties.Settings" SettingsPropertyName="H_TshopConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Cake_Image" Member="Cake_Images">
+    <Type Name="Cake_Image">
+      <Column Name="Imange_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cake_ID" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="Cake_Image" Member="Cake_Image1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Cake_Cake_Image" Member="Cake" ThisKey="Cake_ID" OtherKey="Cake_ID" Type="Cake" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cake_Type" Member="Cake_Types">
+    <Type Name="Cake_Type">
+      <Column Name="Cake_Type_Code" Type="System.String" DbType="Char(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Cake_Type_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Cake_Type_Cake" Member="Cakes" ThisKey="Cake_Type_Code" OtherKey="Cake_Type_Code" Type="Cake" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cakes" Member="Cakes">
+    <Type Name="Cake">
+      <Column Name="Cake_ID" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Cake_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Cake_Type_Code" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="Cake_Price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Cake_decripsion" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Cake_Cake_Image" Member="Cake_Images" ThisKey="Cake_ID" OtherKey="Cake_ID" Type="Cake_Image" />
+      <Association Name="Cake_Cart_Item" Member="Cart_Items" ThisKey="Cake_ID" OtherKey="Cake_ID" Type="Cart_Item" />
+      <Association Name="Cake_COMMENT" Member="COMMENTs" ThisKey="Cake_ID" OtherKey="Cake_ID" Type="COMMENT" />
+      <Association Name="Cake_Type_Cake" Member="Cake_Type" ThisKey="Cake_Type_Code" OtherKey="Cake_Type_Code" Type="Cake_Type" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cart" Member="Carts">
+    <Type Name="Cart">
+      <Column Name="Customer_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cart_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Customer_Payment_ID" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="Payment_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Shipping_Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Customer_Requirements" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Cart_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Driver_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Cart_Cart_Item" Member="Cart_Items" ThisKey="Cart_ID" OtherKey="Cart_ID" Type="Cart_Item" />
+      <Association Name="Customer_Cart" Member="Customer" ThisKey="Customer_ID" OtherKey="Customer_ID" Type="Customer" IsForeignKey="true" />
+      <Association Name="Driver_Cart" Member="Driver" ThisKey="Driver_ID" OtherKey="Driver_ID" Type="Driver" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cart_Item" Member="Cart_Items">
+    <Type Name="Cart_Item">
+      <Column Name="Cake_ID" Type="System.String" DbType="Char(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Cart_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Orther" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Cake_Cart_Item" Member="Cake" ThisKey="Cake_ID" OtherKey="Cake_ID" Type="Cake" IsForeignKey="true" />
+      <Association Name="Cart_Cart_Item" Member="Cart" ThisKey="Cart_ID" OtherKey="Cart_ID" Type="Cart" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Chef" Member="Chefs">
+    <Type Name="Chef">
+      <Column Name="Chef_ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Chef_Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Chef_Phone" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Association Name="LoginSystem_Chef" Member="LoginSystem" ThisKey="Chef_ID" OtherKey="ID" Type="LoginSystem" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.COMMENT" Member="COMMENTs">
+    <Type Name="COMMENT">
+      <Column Name="Comment_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Customer_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cake_ID" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="Time_comment" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Content" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Cake_COMMENT" Member="Cake" ThisKey="Cake_ID" OtherKey="Cake_ID" Type="Cake" IsForeignKey="true" />
+      <Association Name="Customer_COMMENT" Member="Customer" ThisKey="Customer_ID" OtherKey="Customer_ID" Type="Customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Customer" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="Customer_ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Customer_Name" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Customer_Phone" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Column Name="Customer_Email" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Customer_Adress" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Customer_Payment_ID" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Association Name="Customer_Cart" Member="Carts" ThisKey="Customer_ID" OtherKey="Customer_ID" Type="Cart" />
+      <Association Name="Customer_COMMENT" Member="COMMENTs" ThisKey="Customer_ID" OtherKey="Customer_ID" Type="COMMENT" />
+      <Association Name="Customer_Customer_Payment_Method" Member="Customer_Payment_Methods" ThisKey="Customer_ID" OtherKey="Customer_ID" Type="Customer_Payment_Method" />
+      <Association Name="LoginSystem_Customer" Member="LoginSystem" ThisKey="Customer_ID" OtherKey="ID" Type="LoginSystem" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Customer_Payment_Methods" Member="Customer_Payment_Methods">
+    <Type Name="Customer_Payment_Method">
+      <Column Name="Customer_Payment_ID" Type="System.String" DbType="Char(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Customer_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Payment_Menthod_Code" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Card_Number" Type="System.String" DbType="Char(16)" CanBeNull="true" />
+      <Column Name="Date_from" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="Date_to" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Association Name="Customer_Customer_Payment_Method" Member="Customer" ThisKey="Customer_ID" OtherKey="Customer_ID" Type="Customer" IsForeignKey="true" />
+      <Association Name="Payment_Method_Customer_Payment_Method" Member="Payment_Method" ThisKey="Payment_Menthod_Code" OtherKey="Payment_Method_Code" Type="Payment_Method" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Driver" Member="Drivers">
+    <Type Name="Driver">
+      <Column Name="Driver_ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Driver_Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Driver_Phone" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Association Name="Driver_Cart" Member="Carts" ThisKey="Driver_ID" OtherKey="Driver_ID" Type="Cart" />
+      <Association Name="LoginSystem_Driver" Member="LoginSystem" ThisKey="Driver_ID" OtherKey="ID" Type="LoginSystem" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LoginSystem" Member="LoginSystems">
+    <Type Name="LoginSystem">
+      <Column Name="ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Pass" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="ID_Rule" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="LoginSystem_Chef" Member="Chef" ThisKey="ID" OtherKey="Chef_ID" Type="Chef" Cardinality="One" />
+      <Association Name="LoginSystem_Customer" Member="Customer" ThisKey="ID" OtherKey="Customer_ID" Type="Customer" Cardinality="One" />
+      <Association Name="LoginSystem_Driver" Member="Driver" ThisKey="ID" OtherKey="Driver_ID" Type="Driver" Cardinality="One" />
+      <Association Name="LoginSystem_Manager" Member="Manager" ThisKey="ID" OtherKey="Manager_ID" Type="Manager" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Manager" Member="Managers">
+    <Type Name="Manager">
+      <Column Name="Manager_ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Manager_Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Manager_Phone" Type="System.String" DbType="Char(12)" CanBeNull="true" />
+      <Association Name="LoginSystem_Manager" Member="LoginSystem" ThisKey="Manager_ID" OtherKey="ID" Type="LoginSystem" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Payment_Methods" Member="Payment_Methods">
+    <Type Name="Payment_Method">
+      <Column Name="Payment_Method_Code" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Payment_Method_Descripsion" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="Payment_Method_Customer_Payment_Method" Member="Customer_Payment_Methods" ThisKey="Payment_Method_Code" OtherKey="Payment_Menthod_Code" Type="Customer_Payment_Method" />
+    </Type>
+  </Table>
+  <Function Name="dbo.add_account" Method="add_account">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pass" Type="System.String" DbType="VarChar(255)" />
+    <Parameter Name="rule" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.add_Cake" Method="add_Cake">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="type" Type="System.String" DbType="Char(7)" />
+    <Parameter Name="price" Type="System.Double" DbType="Float" />
+    <Parameter Name="dis" Type="System.Double" DbType="Float" />
+    <Parameter Name="des" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.add_Cake_Image" Method="add_Cake_Image">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="img" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.check_login" Method="check_login">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pass" Type="System.String" DbType="VarChar(255)" />
+    <ElementType Name="check_loginResult">
+      <Column Name="ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.isRule" Method="isRule" IsComposable="true">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="pass" Type="System.String" DbType="VarChar(32)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

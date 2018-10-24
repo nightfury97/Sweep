@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - SweepCake</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type='text/css' />
+    <script src="~/Scripts/jquery.min.js"></script>
+    <link href="~/Content/style.css" rel="stylesheet" type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="~/Content/webform.css" rel="stylesheet" type='text/css' />
+</head>
+<body>
+  @RenderPage("~/Views/Common/header.cshtml")
+    <!-- /top-header -->
+    <!-- main-menu -->
+    <div class="main-menu">
+        <div class="container">
+            <div class="head-nav">
+                <span class="menu"> </span>
+                <ul>
+                    <li class="active"><a href="/HomePage/index">Home</a></li>
+                    <li><a href="/product/products">products</a></li>
+                    <li><a href="/HomePage/about">about</a></li>
+                    <li><a href="/HomePage/contact">Contact</a></li>
+
+                </ul>
+                <div class="clearfix"> </div>
+            </div>
+            <!-- script-for-nav -->
+            <script>
+                $("span.menu").click(function () {
+                    $(".head-nav ul").slideToggle(300, function () {
+                        // Animation complete.
+                    });
+                });
+            </script>
+            <!-- script-for-nav -->
+            <!-- logo -->
+            <div class="logo">
+                <a href="/HomePage/index"><img src="~/Images/logo.png" width="200" title="Sweetcake" /></a>
+            </div>
+            <!-- logo -->
+        </div>
+    </div>
+    <div class="container">
+        @RenderBody()
+    </div>
+    @RenderPage("~/Views/Common/footer.cshtml")
+  
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

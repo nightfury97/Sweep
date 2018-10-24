@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+<div class="content">
+    <div class="container">
+        <h2>Contact</h2>
+        <!----start-main-content----->
+        <div class="main-content">
+            <!---start-contact---->
+            <div class="contact">
+                <div class="contact_info">
+                    <h3>Find Us Here</h3>
+                    <div class="map">
+                        <iframe width="1100" height="175" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.60976377486!2d105.78365441495549!3d21.04829479248695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab3277f870d7%3A0xf27837785a779a8a!2zMjM2IEhvw6BuZyBRdeG7kWMgVmnhu4d0LCBD4buVIE5odeG6vywgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWksIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1538986588868"></iframe>
+                    </div>
+                </div>
+                <div class="section group">
+                    <div class="col span_1_of_3">
+
+                        <div class="company_address">
+                            <h3>Bakery Information :</h3>
+                            <p>Lớp Công nghệ thông tin 2,</p>
+                            <p>236 Hoàng Quốc Việt, Cầu Giấy</p>
+                            <p>Việt Nam</p>
+                            <p>Phone:(84) 788 49 49 09</p>
+                            <p>Email: <span>info@mycompany.com</span></p>
+                            <p>Follow on: <span>Facebook</span>, <span>Twitter</span></p>
+                        </div>
+                    </div>
+                    <div class="col span_2_of_3">
+                        <div class="contact-form">
+                            <h3>Contact Us</h3>
+                            <form method="post" action="contact-post.html">
+                                <div>
+                                    <span><label>NAME</label></span>
+                                    <span><input name="userName" type="text" class="textbox"></span>
+                                </div>
+                                <div>
+                                    <span><label>E-MAIL</label></span>
+                                    <span><input name="userEmail" type="text" class="textbox"></span>
+                                </div>
+                                <div>
+                                    <span><label>MOBILE</label></span>
+                                    <span><input name="userPhone" type="text" class="textbox"></span>
+                                </div>
+                                <div>
+                                    <span><label>SUBJECT</label></span>
+                                    <span><textarea name="userMsg"> </textarea></span>
+                                </div>
+                                <div>
+                                    <span><input type="submit" value="Submit"></span>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <!---End-contact---->
+            </div>
+            <div class="clear"> </div>
+            <!----End-main-content----->
+        </div>
+    </div>
+</div>

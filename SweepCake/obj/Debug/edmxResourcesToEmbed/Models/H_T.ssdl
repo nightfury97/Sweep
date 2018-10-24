@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="H_TshopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cake_Image">
+    <Key>
+      <PropertyRef Name="Imange_ID" />
+    </Key>
+    <Property Name="Imange_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cake_ID" Type="char" MaxLength="5" />
+    <Property Name="Cake_Image" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Cake_Type">
+    <Key>
+      <PropertyRef Name="Cake_Type_Code" />
+    </Key>
+    <Property Name="Cake_Type_Code" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="Cake_Type_Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Cakes">
+    <Key>
+      <PropertyRef Name="Cake_ID" />
+    </Key>
+    <Property Name="Cake_ID" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="Cake_Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="Cake_Type_Code" Type="char" MaxLength="7" />
+    <Property Name="Cake_Price" Type="float" />
+    <Property Name="Discount" Type="float" />
+    <Property Name="Cake_decripsion" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="Cart_ID" />
+    </Key>
+    <Property Name="Customer_ID" Type="varchar" MaxLength="50" />
+    <Property Name="Cart_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Customer_Payment_ID" Type="char" MaxLength="7" />
+    <Property Name="Payment_time" Type="datetime" />
+    <Property Name="Shipping_Address" Type="nvarchar" MaxLength="50" />
+    <Property Name="Customer_Requirements" Type="nvarchar" MaxLength="200" />
+    <Property Name="Cart_Status" Type="int" />
+    <Property Name="Total" Type="float" />
+    <Property Name="Driver_ID" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Cart_Item">
+    <Key>
+      <PropertyRef Name="Cake_ID" />
+      <PropertyRef Name="Cart_ID" />
+    </Key>
+    <Property Name="Cake_ID" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="Cart_ID" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="Orther" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Chef">
+    <Key>
+      <PropertyRef Name="Chef_ID" />
+    </Key>
+    <Property Name="Chef_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Chef_Name" Type="nvarchar" MaxLength="30" />
+    <Property Name="Chef_Phone" Type="char" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="COMMENT">
+    <Key>
+      <PropertyRef Name="Comment_ID" />
+    </Key>
+    <Property Name="Comment_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Customer_ID" Type="varchar" MaxLength="50" />
+    <Property Name="Cake_ID" Type="char" MaxLength="5" />
+    <Property Name="Time_comment" Type="datetime" />
+    <Property Name="Content" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Customer_ID" />
+    </Key>
+    <Property Name="Customer_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Customer_Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="Customer_Phone" Type="char" MaxLength="12" />
+    <Property Name="Customer_Email" Type="varchar" MaxLength="30" />
+    <Property Name="Customer_Adress" Type="nvarchar(max)" />
+    <Property Name="Customer_Payment_ID" Type="char" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="Customer_Payment_Methods">
+    <Key>
+      <PropertyRef Name="Customer_Payment_ID" />
+    </Key>
+    <Property Name="Customer_Payment_ID" Type="char" MaxLength="7" Nullable="false" />
+    <Property Name="Customer_ID" Type="varchar" MaxLength="50" />
+    <Property Name="Payment_Menthod_Code" Type="char" MaxLength="2" />
+    <Property Name="Card_Number" Type="char" MaxLength="16" />
+    <Property Name="Date_from" Type="char" MaxLength="4" />
+    <Property Name="Date_to" Type="char" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="Driver">
+    <Key>
+      <PropertyRef Name="Driver_ID" />
+    </Key>
+    <Property Name="Driver_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Driver_Name" Type="nvarchar" MaxLength="30" />
+    <Property Name="Driver_Phone" Type="char" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="LoginSystem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Pass" Type="char" MaxLength="20" />
+    <Property Name="ID_Rule" Type="int" />
+  </EntityType>
+  <EntityType Name="Manager">
+    <Key>
+      <PropertyRef Name="Manager_ID" />
+    </Key>
+    <Property Name="Manager_ID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Manager_Name" Type="nvarchar" MaxLength="30" />
+    <Property Name="Manager_Phone" Type="char" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="Payment_Methods">
+    <Key>
+      <PropertyRef Name="Payment_Method_Code" />
+    </Key>
+    <Property Name="Payment_Method_Code" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Payment_Method_Descripsion" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <Association Name="FK__Cake_Imag__Cake___2B3F6F97">
+    <End Role="Cakes" Type="Self.Cakes" Multiplicity="0..1" />
+    <End Role="Cake_Image" Type="Self.Cake_Image" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cakes">
+        <PropertyRef Name="Cake_ID" />
+      </Principal>
+      <Dependent Role="Cake_Image">
+        <PropertyRef Name="Cake_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cakes__Cake_Type__286302EC">
+    <End Role="Cake_Type" Type="Self.Cake_Type" Multiplicity="0..1" />
+    <End Role="Cakes" Type="Self.Cakes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cake_Type">
+        <PropertyRef Name="Cake_Type_Code" />
+      </Principal>
+      <Dependent Role="Cakes">
+        <PropertyRef Name="Cake_Type_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cart__Customer_I__31EC6D26">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Customer_ID" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cart__Driver_ID__32E0915F">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="0..1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="Driver_ID" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="Driver_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cart_Item__Cake___35BCFE0A">
+    <End Role="Cakes" Type="Self.Cakes" Multiplicity="1" />
+    <End Role="Cart_Item" Type="Self.Cart_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cakes">
+        <PropertyRef Name="Cake_ID" />
+      </Principal>
+      <Dependent Role="Cart_Item">
+        <PropertyRef Name="Cake_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Cart_Item__Cart___36B12243">
+    <End Role="Cart" Type="Self.Cart" Multiplicity="1" />
+    <End Role="Cart_Item" Type="Self.Cart_Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cart">
+        <PropertyRef Name="Cart_ID" />
+      </Principal>
+      <Dependent Role="Cart_Item">
+        <PropertyRef Name="Cart_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chef__Chef_ID__1CF15040">
+    <End Role="LoginSystem" Type="Self.LoginSystem" Multiplicity="1" />
+    <End Role="Chef" Type="Self.Chef" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="LoginSystem">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Chef">
+        <PropertyRef Name="Chef_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__COMMENT__Cake_ID__2F10007B">
+    <End Role="Cakes" Type="Self.Cakes" Multiplicity="0..1" />
+    <End Role="COMMENT" Type="Self.COMMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cakes">
+        <PropertyRef Name="Cake_ID" />
+      </Principal>
+      <Dependent Role="COMMENT">
+        <PropertyRef Name="Cake_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__COMMENT__Custome__2E1BDC42">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="COMMENT" Type="Self.COMMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Customer_ID" />
+      </Principal>
+      <Dependent Role="COMMENT">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customer___Custo__1920BF5C">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Customer_Payment_Methods" Type="Self.Customer_Payment_Methods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Customer_ID" />
+      </Principal>
+      <Dependent Role="Customer_Payment_Methods">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customer___Payme__1A14E395">
+    <End Role="Payment_Methods" Type="Self.Payment_Methods" Multiplicity="0..1" />
+    <End Role="Customer_Payment_Methods" Type="Self.Customer_Payment_Methods" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment_Methods">
+        <PropertyRef Name="Payment_Method_Code" />
+      </Principal>
+      <Dependent Role="Customer_Payment_Methods">
+        <PropertyRef Name="Payment_Menthod_Code" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customer__Custom__145C0A3F">
+    <End Role="LoginSystem" Type="Self.LoginSystem" Multiplicity="1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="LoginSystem">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="Customer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Driver__Driver_I__1FCDBCEB">
+    <End Role="LoginSystem" Type="Self.LoginSystem" Multiplicity="1" />
+    <End Role="Driver" Type="Self.Driver" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="LoginSystem">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Driver">
+        <PropertyRef Name="Driver_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Manager__Manager__22AA2996">
+    <End Role="LoginSystem" Type="Self.LoginSystem" Multiplicity="1" />
+    <End Role="Manager" Type="Self.Manager" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="LoginSystem">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Manager">
+        <PropertyRef Name="Manager_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="AUTO_ID_CAKES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar" />
+  <Function Name="AUTO_ID_Payment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar" />
+  <EntityContainer Name="H_TshopModelStoreContainer">
+    <EntitySet Name="Cake_Image" EntityType="Self.Cake_Image" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cake_Type" EntityType="Self.Cake_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cakes" EntityType="Self.Cakes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cart_Item" EntityType="Self.Cart_Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chef" EntityType="Self.Chef" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COMMENT" EntityType="Self.COMMENT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer_Payment_Methods" EntityType="Self.Customer_Payment_Methods" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Driver" EntityType="Self.Driver" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoginSystem" EntityType="Self.LoginSystem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manager" EntityType="Self.Manager" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment_Methods" EntityType="Self.Payment_Methods" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Cake_Imag__Cake___2B3F6F97" Association="Self.FK__Cake_Imag__Cake___2B3F6F97">
+      <End Role="Cakes" EntitySet="Cakes" />
+      <End Role="Cake_Image" EntitySet="Cake_Image" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cakes__Cake_Type__286302EC" Association="Self.FK__Cakes__Cake_Type__286302EC">
+      <End Role="Cake_Type" EntitySet="Cake_Type" />
+      <End Role="Cakes" EntitySet="Cakes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cart__Customer_I__31EC6D26" Association="Self.FK__Cart__Customer_I__31EC6D26">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cart__Driver_ID__32E0915F" Association="Self.FK__Cart__Driver_ID__32E0915F">
+      <End Role="Driver" EntitySet="Driver" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cart_Item__Cake___35BCFE0A" Association="Self.FK__Cart_Item__Cake___35BCFE0A">
+      <End Role="Cakes" EntitySet="Cakes" />
+      <End Role="Cart_Item" EntitySet="Cart_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Cart_Item__Cart___36B12243" Association="Self.FK__Cart_Item__Cart___36B12243">
+      <End Role="Cart" EntitySet="Cart" />
+      <End Role="Cart_Item" EntitySet="Cart_Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chef__Chef_ID__1CF15040" Association="Self.FK__Chef__Chef_ID__1CF15040">
+      <End Role="LoginSystem" EntitySet="LoginSystem" />
+      <End Role="Chef" EntitySet="Chef" />
+    </AssociationSet>
+    <AssociationSet Name="FK__COMMENT__Cake_ID__2F10007B" Association="Self.FK__COMMENT__Cake_ID__2F10007B">
+      <End Role="Cakes" EntitySet="Cakes" />
+      <End Role="COMMENT" EntitySet="COMMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__COMMENT__Custome__2E1BDC42" Association="Self.FK__COMMENT__Custome__2E1BDC42">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="COMMENT" EntitySet="COMMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customer___Custo__1920BF5C" Association="Self.FK__Customer___Custo__1920BF5C">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Customer_Payment_Methods" EntitySet="Customer_Payment_Methods" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customer___Payme__1A14E395" Association="Self.FK__Customer___Payme__1A14E395">
+      <End Role="Payment_Methods" EntitySet="Payment_Methods" />
+      <End Role="Customer_Payment_Methods" EntitySet="Customer_Payment_Methods" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customer__Custom__145C0A3F" Association="Self.FK__Customer__Custom__145C0A3F">
+      <End Role="LoginSystem" EntitySet="LoginSystem" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Driver__Driver_I__1FCDBCEB" Association="Self.FK__Driver__Driver_I__1FCDBCEB">
+      <End Role="LoginSystem" EntitySet="LoginSystem" />
+      <End Role="Driver" EntitySet="Driver" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Manager__Manager__22AA2996" Association="Self.FK__Manager__Manager__22AA2996">
+      <End Role="LoginSystem" EntitySet="LoginSystem" />
+      <End Role="Manager" EntitySet="Manager" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

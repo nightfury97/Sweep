@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SweepCake", "SweepCake\SweepCake.csproj", "{327430C4-0B63-4681-8430-1F83078D8CD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop_data", "Shop_data\Shop_data.csproj", "{2FF94A22-6F1C-4064-9447-E1D6DC8205BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{327430C4-0B63-4681-8430-1F83078D8CD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{327430C4-0B63-4681-8430-1F83078D8CD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{327430C4-0B63-4681-8430-1F83078D8CD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{327430C4-0B63-4681-8430-1F83078D8CD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FF94A22-6F1C-4064-9447-E1D6DC8205BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FF94A22-6F1C-4064-9447-E1D6DC8205BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FF94A22-6F1C-4064-9447-E1D6DC8205BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FF94A22-6F1C-4064-9447-E1D6DC8205BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {97521AAF-24E4-4E60-8E50-4F54CF0E4AE8}
+	EndGlobalSection
+EndGlobal

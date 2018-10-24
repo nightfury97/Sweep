@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4e1969a9bae74c10ac319ad0d56f4aab" Name="Diagram1">
+        <EntityTypeShape EntityType="H_TshopModel.Cake_Image" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="H_TshopModel.Cake_Type" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="H_TshopModel.Cake" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="H_TshopModel.Cart" Width="1.5" PointX="5.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="H_TshopModel.Cart_Item" Width="1.5" PointX="7.5" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="H_TshopModel.Chef" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="H_TshopModel.COMMENT" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="H_TshopModel.Customer" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="H_TshopModel.Customer_Payment_Methods" Width="1.5" PointX="8.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="H_TshopModel.Driver" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="H_TshopModel.LoginSystem" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="H_TshopModel.Manager" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="H_TshopModel.Payment_Methods" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="H_TshopModel.FK__Cake_Imag__Cake___2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="H_TshopModel.FK__Cakes__Cake_Type__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="H_TshopModel.FK__Cart_Item__Cake___35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="H_TshopModel.FK__COMMENT__Cake_ID__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="H_TshopModel.FK__Cart__Customer_I__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="H_TshopModel.FK__Cart__Driver_ID__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="H_TshopModel.FK__Cart_Item__Cart___36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="H_TshopModel.FK__Chef__Chef_ID__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="H_TshopModel.FK__COMMENT__Custome__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="H_TshopModel.FK__Customer___Custo__1920BF5C" ManuallyRouted="false" />
+        <AssociationConnector Association="H_TshopModel.FK__Customer__Custom__145C0A3F" ManuallyRouted="false" />
+        <AssociationConnector Association="H_TshopModel.FK__Customer___Payme__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="H_TshopModel.FK__Driver__Driver_I__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="H_TshopModel.FK__Manager__Manager__22AA2996" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

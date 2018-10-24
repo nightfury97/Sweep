@@ -1,0 +1,12 @@
+F:\GitHub\SweepCake\Shop_data\obj\Debug\Shop_data.csprojAssemblyReference.cache
+F:\GitHub\SweepCake\Shop_data\obj\Debug\Shop_data.csproj.CoreCompileInputs.cache
+F:\GitHub\SweepCake\Shop_data\bin\Debug\Shop_data.dll.config
+F:\GitHub\SweepCake\Shop_data\bin\Debug\Shop_data.dll
+F:\GitHub\SweepCake\Shop_data\bin\Debug\Shop_data.pdb
+F:\GitHub\SweepCake\Shop_data\bin\Debug\EntityFramework.dll
+F:\GitHub\SweepCake\Shop_data\bin\Debug\EntityFramework.SqlServer.dll
+F:\GitHub\SweepCake\Shop_data\bin\Debug\EntityFramework.xml
+F:\GitHub\SweepCake\Shop_data\bin\Debug\EntityFramework.SqlServer.xml
+F:\GitHub\SweepCake\Shop_data\obj\Debug\Shop_data.csproj.CopyComplete
+F:\GitHub\SweepCake\Shop_data\obj\Debug\Shop_data.dll
+F:\GitHub\SweepCake\Shop_data\obj\Debug\Shop_data.pdb
